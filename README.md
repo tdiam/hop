@@ -11,7 +11,9 @@ $ hop myproject
 The script will search at `~/.hopdirs` for directory paths ending with `myproject` as a directory name.
 If found, it will `cd` there.
 
-## Configuration
+Lookups are case-insensitive and autocomplete functionality is provided.
+
+## Adding directories
 
 `.hopdirs` is a list of directory paths separated by new lines.
 
@@ -63,4 +65,13 @@ You can also add it to your `.bashrc` and then have it available every time you 
 if [ -f /path/to/hop.sh ]; then
 	. /path/to/hop.sh
 fi
+```
+
+## Configuration
+
+The hopdirs file path can be changed from `~/.hopdirs` by setting the variable `HOPDIRS_FILE`:
+
+```shell
+$ export HOPDIRS_FILE=/path/to/hopdirs
+$ hop myproject
 ```
