@@ -8,7 +8,7 @@ _hop_lookup() {
 		(>&2 echo "List of hop directories at path "$HOPDIRS_FILE" was not found.")
 		return 1
 	fi
-	echo $(grep -i "$1/\?$" "$HOPDIRS_FILE")
+	echo $(sed "/^#/ d" "$HOPDIRS_FILE" | grep -i "$1/\?$")
 }
 
 hop() {
@@ -32,7 +32,7 @@ _hop_autocomplete() {
 		return
 	fi
 	# Remove trailing /, split by / and get last part
-	HOPDIRNAMES=$(sed "s/\/$//" "$HOPDIRS_FILE" | awk -F/ '{print $NF}')
+	HOPDIRNAMES=$(sed "s/\/$//" "$HOPDIRS_FILE" | awk -F/ '/^[^#]/ {print $NF}')
 	COMPREPLY=($(compgen -W "$HOPDIRNAMES" -- "${COMP_WORDS[1]}"))
 }
 

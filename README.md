@@ -24,6 +24,8 @@ As a manually maintained list of bookmarks:
 /home/username/Music/Weezer/Teal-Album
 ```
 
+> **NOTE:** Lines that start with `#` are ignored.
+
 ### Example 2
 
 Or generated with `find` to simplify navigation in a nested hell of directories:
