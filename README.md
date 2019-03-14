@@ -4,7 +4,7 @@ Simple Bash utility for navigating quickly to set directories.
 
 ## Usage
 
-```bash
+```shell
 $ hop myproject
 ```
 
@@ -41,7 +41,7 @@ Or generated with `find` to simplify navigation in a nested hell of directories:
       * calculus-ii/
     * ...
 
-```bash
+```shell
 $ find /path/to/university -mindepth 3 maxdepth 3 -type d -print >> ~/.hopdirs
 
 # Hop hop hop
@@ -51,12 +51,12 @@ $ hop calculus-ii
 ## Installation
 
 Just source `hop.sh`:
-```bash
+```shell
 $ . hop.sh
 ```
 
 You can also add it to your `.bashrc` and then have it available every time you launch your shell.
-```
+```shell
 # .bashrc
 # ...rest of the file
 
