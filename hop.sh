@@ -35,6 +35,7 @@ hop() {
     # to prevent problems when it's rerun
     # https://stackoverflow.com/a/16655341/11114199
     local OPTIND i opts
+    LOOKUP_ICASE_FLAG=
     if [ "$IGNORECASE" -eq 1 ]; then
         LOOKUP_ICASE_FLAG=" -i"
     fi
