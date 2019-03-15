@@ -5,13 +5,17 @@ Simple Bash utility for navigating quickly to set directories.
 ## Usage
 
 ```shell
-$ hop myproject
+$ hop --help
+Usage: hop [-i] DIRNAME
+    Hops to directories defined in /home/username/.hopdirs by only using their name.
+
+    Options:
+      -i        Ignore case when searching through directory names.
+
+$ hop Teal-Album
 ```
 
-The script will search at `~/.hopdirs` for directory paths ending with `myproject` as a directory name.
-If found, it will `cd` there.
-
-Lookups are case-insensitive and autocomplete functionality is provided.
+The script will search at `~/.hopdirs` for directories named `Teal-Album`. If found, it will `cd` there.
 
 ## Adding directories
 
@@ -69,9 +73,17 @@ fi
 
 ## Configuration
 
-The hopdirs file path can be changed from `~/.hopdirs` by setting the variable `HOPDIRS_FILE`:
+`hop` can be customized through the following environment variables.
+
+* `HOPDIRS_FILE`:  
+  Path to the hopdirs file. Default is `~/.hopdirs`.
+* `HOP_ICASE`:  
+  Set to `1` to force case-insensitive lookups and autocompletions. Default is `0`.
+
+### Example
 
 ```shell
 $ export HOPDIRS_FILE=/path/to/hopdirs
-$ hop myproject
+$ export HOP_ICASE=1
+$ hop teal-album
 ```
